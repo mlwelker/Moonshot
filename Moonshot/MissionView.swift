@@ -19,7 +19,7 @@ struct MissionView: View {
                         .scaledToFit()
                         .frame(maxWidth: geometry.size.width * 0.6)
                         .padding(.top)
-                    
+                        .accessibilityLabel(mission.badge)
                     
                     VStack(alignment: .leading) {
                         
@@ -63,6 +63,7 @@ struct MissionView: View {
                                             Text(crewMember.astronaut.name)
                                                 .foregroundColor(.white)
                                                 .font(.headline)
+                                                .accessibilityLabel(crewMember.astronaut.name.replacingOccurrences(of: ".", with: " "))
                                             
                                             Text(crewMember.role)
                                                 .foregroundColor(.secondary)
